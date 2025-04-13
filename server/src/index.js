@@ -28,7 +28,7 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-if (process.env.NODE_ENV === "PROD") {
+if (process.env.ENVIRONMENT === "PROD") {
     app.use(express.static(path.join(__dirname, "../client/dist")));
 
     app.get("*", (req, res) => {
